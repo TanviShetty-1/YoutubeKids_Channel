@@ -1,276 +1,147 @@
-{
-  "metadata": {
-    "visual": {
-      "presentation": {
-        "themes": {
-          "43f9f769-dbb7-484b-9057-1fd7ac6f8440": {
-            "template": "basic",
-            "templateAdditionalOptions": {},
-            "palette": {
-              "primary": {
-                "0": "#000000",
-                "5": "#05004c",
-                "10": "#0e0664",
-                "15": "#1a166d",
-                "20": "#262477",
-                "25": "#313083",
-                "30": "#3d3c8f",
-                "35": "#49499c",
-                "40": "#5555a9",
-                "50": "#6e6ec3",
-                "60": "#8888df",
-                "70": "#a2a2fc",
-                "80": "#c2c1ff",
-                "90": "#e2dfff",
-                "95": "#f2efff",
-                "98": "#fcf8ff",
-                "99": "#fffbff",
-                "100": "#ffffff"
-              },
-              "secondary": {
-                "0": "#000000",
-                "5": "#0f0f21",
-                "10": "#1a1a2c",
-                "15": "#242437",
-                "20": "#2f2f42",
-                "25": "#3a3a4d",
-                "30": "#454559",
-                "35": "#515065",
-                "40": "#5d5c71",
-                "50": "#76758b",
-                "60": "#908ea5",
-                "70": "#aba9c1",
-                "80": "#c6c4dd",
-                "90": "#e2e0f9",
-                "95": "#f2efff",
-                "98": "#fcf8ff",
-                "99": "#fffbff",
-                "100": "#ffffff"
-              },
-              "tertiary": "",
-              "error": {
-                "0": "#000000",
-                "5": "#2d0001",
-                "10": "#410002",
-                "15": "#540003",
-                "20": "#690005",
-                "25": "#7e0007",
-                "30": "#93000a",
-                "35": "#a80710",
-                "40": "#ba1a1a",
-                "50": "#de3730",
-                "60": "#ff5449",
-                "70": "#ff897d",
-                "80": "#ffb4ab",
-                "90": "#ffdad6",
-                "95": "#ffedea",
-                "98": "#fff8f7",
-                "99": "#fffbff",
-                "100": "#ffffff"
-              },
-              "neutral": {
-                "0": "#000000",
-                "5": "#111114",
-                "10": "#1c1b1f",
-                "15": "#262529",
-                "20": "#313034",
-                "25": "#3c3b3f",
-                "30": "#47464a",
-                "35": "#535256",
-                "40": "#5f5e62",
-                "50": "#78767a",
-                "60": "#929094",
-                "70": "#adaaaf",
-                "80": "#c8c5ca",
-                "90": "#e5e1e6",
-                "95": "#f3eff4",
-                "98": "#fcf8fd",
-                "99": "#fffbff",
-                "100": "#ffffff"
-              },
-              "neutralVariant": {
-                "0": "#000000",
-                "5": "#101018",
-                "10": "#1b1b23",
-                "15": "#25252d",
-                "20": "#303038",
-                "25": "#3b3a43",
-                "30": "#47464f",
-                "35": "#52515a",
-                "40": "#5f5d67",
-                "50": "#777680",
-                "60": "#918f9a",
-                "70": "#acaab4",
-                "80": "#c8c5d0",
-                "90": "#e4e1ec",
-                "95": "#f3effa",
-                "98": "#fcf8ff",
-                "99": "#fffbff",
-                "100": "#ffffff"
-              }
-            },
-            "themeColors": {
-              "primaryColor": "",
-              "secondaryColor": "",
-              "backgroundColor": "",
-              "primaryTextColor": "",
-              "textColor": ""
-            },
-            "splashScreen": {
-              "storedData": {
-                "handle": "drive:/17euLMjVMxJi1qikZcWdJ-q_gV0d3e6MS",
-                "mimeType": "image/png",
-                "contentLength": 1579872
-              }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director's Storyboard Dashboard | Dino-Night Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pip: '#32CD32',
+                        stella: '#FF8C00',
+                        toby: '#89CFF0',
+                        night: '#1E293B'
+                    },
+                    fontFamily: {
+                        display: ['"Fredoka One"', 'cursive'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
             }
-          }
-        },
-        "theme": "43f9f769-dbb7-484b-9057-1fd7ac6f8440"
-      }
-    },
-    "intent": "An app that acts as an expert children's director for a 3D animated YouTube Kids show starring Pip (lime-green baby T-Rex), Stella (orange Stegosaurus with colorful spots), and Toby (baby-blue Triceratops).\n\nInput:\n- Adventure topic (e.g., Camping under the stars) and Nursery Rhyme (e.g., Twinkle Twinkle Little Star).\n\nWorkflow & Output:\n1. 120-Second Story Arc (12 sequential 10-second scenes):\n   - Scene 1-3 (0-30s): Setting up the adventure & world exploration.\n   - Scene 4-6 (30-60s): Gentle preschool challenge & warm resolution.\n   - Scene 7-10 (60-100s): The core nursery rhyme singing sequence under the stars.\n   - Scene 11-12 (100-120s): Cozy conclusion, wind-down, and bedtime.\n2. Scene-by-Scene Breakdown:\n   - For every single scene (1 through 12), output:\n     - Exact timestamp (e.g., 0:10 - 0:20).\n     - Character Focus (Who is on screen).\n     - Visual Action & Background setting.\n     - Lyrics or Spoken Dialogue.\n3. 30-Second Short Extraction:\n   - Mark which 3 scenes (from 7-10) should be cropped to create the vertical 30-second teaser Short.",
-    "revision_intents": [],
-    "raw_intent": "An app that acts as an expert children's director for a 3D animated YouTube Kids show starring Pip (lime-green baby T-Rex), Stella (orange Stegosaurus with colorful spots), and Toby (baby-blue Triceratops).\n\nInput:\n- Adventure topic (e.g., Camping under the stars) and Nursery Rhyme (e.g., Twinkle Twinkle Little Star).\n\nWorkflow & Output:\n1. 120-Second Story Arc (12 sequential 10-second scenes):\n   - Scene 1-3 (0-30s): Setting up the adventure & world exploration.\n   - Scene 4-6 (30-60s): Gentle preschool challenge & warm resolution.\n   - Scene 7-10 (60-100s): The core nursery rhyme singing sequence under the stars.\n   - Scene 11-12 (100-120s): Cozy conclusion, wind-down, and bedtime.\n2. Scene-by-Scene Breakdown:\n   - For every single scene (1 through 12), output:\n     - Exact timestamp (e.g., 0:10 - 0:20).\n     - Character Focus (Who is on screen).\n     - Visual Action & Background setting.\n     - Lyrics or Spoken Dialogue.\n3. 30-Second Short Extraction:\n   - Mark which 3 scenes (from 7-10) should be cropped to create the vertical 30-second teaser Short.",
-    "tags": [
-      "Animation",
-      "Scriptwriting",
-      "Storyboarding",
-      "KidsContent"
-    ],
-    "parameters": {}
-  },
-  "assets": {},
-  "title": "PipStudio",
-  "description": "Create magical 120-second animated adventures for Pip, Stella, and Toby.",
-  "version": "0.0.1",
-  "nodes": [
-    {
-      "id": "node_step_storyboard_text",
-      "metadata": {
-        "title": "Generate Storyboard Content",
-        "visual": {
-          "x": 700,
-          "y": 350,
-          "collapsed": "expanded",
-          "outputHeight": 88
-        },
-        "step_intent": "Create a detailed 12-scene screenplay and teaser plan for a children's show starring Pip (lime-green baby T-Rex), Stella (orange Stegosaurus with colorful spots), and Toby (baby-blue Triceratops). The content must be structured into 12 sequential 10-second scenes following the requested arc: scenes 1-3 (intro), 4-6 (challenge), 7-10 (nursery rhyme), and 11-12 (conclusion). For each scene, include the timestamp, character focus, visual action/background, and dialogue/lyrics. Identify 3 scenes from the 7-10 range to form a 30-second vertical teaser."
-      },
-      "type": "embed://a2/generate.bgl.json#module:main",
-      "configuration": {
-        "config$prompt": {
-          "parts": [
-            {
-              "text": "Objective: Create a detailed 12-scene screenplay and a teaser plan for a children's show starring Pip (a lime-green baby T-Rex), Stella (an orange Stegosaurus with colorful spots), and Toby (a baby-blue Triceratops). The story should be based on the topic {{\"type\":\"in\",\"path\":\"ask_user_adventure_topic\",\"title\":\"Adventure Topic\"}} and incorporate the nursery rhyme {{\"type\":\"in\",\"path\":\"ask_user_nursery_rhyme\",\"title\":\"Nursery Rhyme\"}}.\n\nOutput Format:\nProvide 12 sequential scenes, each exactly 10 seconds long, following this narrative arc:\n1. Scenes 1-3: Introduction to the adventure and characters.\n2. Scenes 4-6: The characters encounter and address a challenge.\n3. Scenes 7-10: The characters perform the nursery rhyme {{\"type\":\"in\",\"path\":\"ask_user_nursery_rhyme\",\"title\":\"Nursery Rhyme\"}}.\n4. Scenes 11-12: The conclusion and wrap-up.\n\nFor every scene, include:\n- Timestamp (e.g., 00:00-00:10)\n- Character Focus\n- Visual Action and Background Description\n- Dialogue or Lyrics\n\nAdditionally, provide a teaser plan that identifies 3 scenes from the 7-10 range to be edited into a 30-second vertical teaser.\n\nYou are done when you have completed the 12-scene screenplay and the teaser plan.\n\nUser Input / Context:\nAdventure Topic: {{\"type\":\"in\",\"path\":\"ask_user_adventure_topic\",\"title\":\"Adventure Topic\"}}\nNursery Rhyme: {{\"type\":\"in\",\"path\":\"ask_user_nursery_rhyme\",\"title\":\"Nursery Rhyme\"}}"
-            }
-          ],
-          "role": "user"
-        },
-        "generation-mode": "agent"
-      }
-    },
-    {
-      "id": "node_step_storyboard_plan",
-      "metadata": {
-        "title": "Render Storyboard Webpage",
-        "visual": {
-          "x": 1050,
-          "y": 350,
-          "collapsed": "expanded",
-          "outputHeight": 88
-        },
-        "step_intent": "Take the structured storyboard text and render it into a visually organized and easy-to-read HTML webpage for the director. Ensure the layout clearly displays the 12-scene sequence and the specific scenes selected for the teaser short."
-      },
-      "type": "embed://a2/a2.bgl.json#module:render-outputs",
-      "configuration": {
-        "text": {
-          "parts": [
-            {
-              "text": "Create a vibrant, professional \"Director’s Storyboard Dashboard\" for a 3D animated children's series. The webpage should feel like a high-end production tool that is both whimsical (reflecting the kids' show theme) and highly organized for a director's review.\n\n### 1. Layout Organization\n- **Hero Header**: A bold, welcoming header featuring the show title and adventure theme. Include a \"Character Lineup\" bar showing the three leads: Pip (lime-green T-Rex), Stella (orange Stegosaurus), and Toby (baby-blue Triceratops) with their specific visual traits.\n- **The 120-Second Timeline Ribbon**: A horizontal progress-style navigation bar at the top that segments the 12 scenes into their four functional phases: Intro (1-3), Challenge (4-6), Nursery Rhyme (7-10), and Conclusion (11-12).\n- **The Storyboard Grid**: A responsive grid of 12 cards. Each card represents one 10-second scene.\n    - Each card must display: Large Scene Number, Timestamp (e.g., 0:10 - 0:20), Character Focus, a descriptive \"Visual Action\" block, and a stylized \"Dialogue/Lyrics\" bubble.\n- **\"Vertical Teaser\" Spotlight**: A dedicated, visually distinct section at the bottom or in a sidebar. It should use a vertical (9:16) aspect ratio container to showcase the 3 specific scenes selected from the 7-10 range. This section should be highlighted with a \"Social Media Teaser\" badge.\n\n### 2. Style Design Language\n- **Aesthetic Goal**: \"Whimsical Professionalism.\" The design should be polished and modern but use \"toy-like\" design elements (large rounded corners, soft shadows, and playful iconography).\n- **Color Palette**: \n    - Primary: Lime Green (#32CD32), Vibrant Orange (#FF8C00), and Baby Blue (#89CFF0) to match the characters.\n    - Background: Clean, soft off-white or very light pastel lavender to let the character colors pop.\n    - Accents: Use a \"Starry Night\" dark navy blue for the Nursery Rhyme section (Scenes 7-10) to reflect the \"under the stars\" theme.\n- **Typography**: \n    - Headings: Friendly, rounded sans-serif (e.g., 'Quicksand' or 'Fredoka One').\n    - Body: Highly legible, clean sans-serif (e.g., 'Inter' or 'Montserrat') for technical scene details.\n- **Spacing**: Generous whitespace between scene cards to prevent clutter. Use \"pill\" shaped tags for metadata like timestamps and character focus.\n\n### 3. Component Guidelines\n- **Scene Cards**: Use a \"white-board\" style with subtle gradients. Add a subtle border color to each card based on the character focus (e.g., a lime-green border if Pip is the focus).\n- **Dialogue Boxes**: Present lyrics and dialogue in a speech-bubble style component with a slightly different background color to distinguish them from visual descriptions.\n- **Teaser Callout**: The 3 scenes selected for the teaser should have a \"Teaser Pick\" gold-star icon or a glowing border effect to make them stand out within the main grid.\n- **Responsive Behavior**: On mobile, the 12-scene grid should collapse into a single-column vertical scroll, maintaining the clear separation of the 4 narrative phases.\n\nstoryboard_text: {{\"type\":\"in\",\"path\":\"node_step_storyboard_text\",\"title\":\"Generate Storyboard Content\"}}"
-            }
-          ],
-          "role": "user"
-        },
-        "b-system-instruction": {
-          "parts": [
-            {
-              "text": "You are an AI Web Developer. Your task is to generate a single, self-contained HTML document for rendering in an iframe, based on user instructions and data.\n\n**Visual aesthetic:**\n    * Aesthetics are crucial. Make the page look amazing, especially on mobile.\n    * Respect any instructions on style, color palette, or reference examples provided by the user.\n    * **CRITICAL: Aim for premium, state-of-the-art designs. Avoid simple minimum viable products.**\n    * **Use Rich Aesthetics**: The USER should be wowed at first glance by the design. Use best practices in modern web design (e.g. vibrant colors, dark modes, glassmorphism, and dynamic animations) to create a stunning first impression. Failure to do this is UNACCEPTABLE.\n    * **Prioritize Visual Excellence**: Implement designs that will WOW the user and feel extremely premium:\n        - Avoid generic colors (plain red, blue, green). Use curated, harmonious color palettes (e.g., HSL tailored colors, sleek dark modes).\n        - Using modern typography (e.g., from Google Fonts like Inter, Roboto, or Outfit) instead of browser defaults.\n        - Use smooth gradients.\n        - Add subtle micro-animations for enhanced user experience.\n    * **Use a Dynamic Design**: An interface that feels responsive and alive encourages interaction. Achieve this with hover effects and interactive elements. Micro-animations, in particular, are highly effective for improving user engagement.\n    * **Thematic Specificity**: Do not just create a generic layout. Define a clear \"vibe\" or theme based on the content. Use specific aesthetic keywords (e.g., \"Glassmorphism\", \"Neobrutalism\", \"Minimalist\", \"Comic Book Style\") to guide the design.\n    * **Typography Hierarchy**: Explicitly import and use font pairings. Use a distinct Display Font for headers and a highly readable Body Font for text.\n    * **Readability**: Pay extra attention to readability. Ensure the text is always readable with sufficient contrast against the background. Choose fonts and colors that enhance legibility.\n\n**Design and Functionality:**\n    * **Component-Based Design**: Do not just dump text into blocks. Semanticize the content into distinct UI components.\n    * **Layout Dynamics**: Break the grid. Avoid strict, identical grid columns. Use asymmetrical layouts, Bento grids, or responsive flexbox layouts where some elements span full width to create visual interest and emphasize key content.\n    * **Tailwind Configuration**: Extend the Tailwind configuration within a `<script>` block to define custom font families and color palettes that match the theme.\n    * Thoroughly analyze the user's instructions to determine the desired type of webpage, application, or visualization. What are the key features, layouts, or functionality?\n    * Analyze any provided data to identify the most compelling layout or visualization of it. For example, if the user requests a visualization, select an appropriate chart type (bar, line, pie, scatter, etc.) to create the most insightful and visually compelling representation. Or if user instructions say `use a carousel format`, you should consider how to break the content and any media into different card components to display within the carousel.\n    * If requirements are underspecified, make reasonable assumptions to complete the design and functionality. Your goal is to deliver a working product with no placeholder content.\n    * Ensure the generated code is valid and functional. Return only the code, and open the HTML codeblock with the literal string \"```html\".\n    * The output must be a complete and valid HTML document with no placeholder content for the developer to fill in.\n\n**Libraries:**\n  Unless otherwise specified, use:\n    * Tailwind for CSS\n    * **CRITICAL: Use the Tailwind CDN from `https://cdn.tailwindcss.com`. Do NOT use `tailwind.min.css` or any other local Tailwind file. Always include Tailwind using: `<script src=\"https://cdn.tailwindcss.com\"></script>`**\n\n**Constraints:**\n  * **External Links:** You ARE allowed to generate external links (`<a href=\"...\">` and `window.open(...)`) to external websites (e.g. google.com, wikipedia.org) for user navigation.\n  * **NO External Embeds:** Do NOT embed any external resources (e.g. `<script src=\"...\">`, `<img src=\"...\">`, `<iframe src=\"...\">`, `<link href=\"...\">`) from external URLs. Content Security Policy (CSP) will block them.\n  * **Media Restriction:** ONLY use media URLs that are explicitly passed in the input. Do NOT generate or hallucinate any other media URLs (e.g. from placeholder sites or external CDNs).\n  * **Render All Media:** You MUST render ALL media (images, videos, audio) that are passed in. Do NOT skip or omit any provided media items. Every passed-in media URL must appear in the final HTML output.\n  * **Navigation Restriction:** Do NOT generate unneeded fake links or buttons to sub-pages (e.g. \"About\", \"Contact\", \"Learn More\") unless explicitly requested. Stick to the plan and the provided content.\n  * **Footer Restriction:** **NEVER** generate any footer content, including legal footers like \"All rights reserved\" or \"Copyright 2024\". [It is a violation of Google's policies to hallucinate legal footers.]\n"
-            }
-          ],
-          "role": "user"
-        },
-        "p-render-mode": "Auto",
-        "b-render-model-name": "gemini-flash"
-      }
-    },
-    {
-      "id": "ask_user_adventure_topic",
-      "metadata": {
-        "title": "Adventure Topic",
-        "visual": {
-          "x": 250,
-          "y": 300,
-          "collapsed": "expanded",
-          "outputHeight": 88
         }
-      },
-      "type": "embed://a2/a2.bgl.json#21ee02e7-83fa-49d0-964c-0cab10eafc2c",
-      "configuration": {
-        "description": {
-          "parts": [
-            {
-              "text": "Enter the main theme for the episode."
-            }
-          ],
-          "role": "user"
-        },
-        "p-modality": "Any"
-      }
-    },
-    {
-      "id": "ask_user_nursery_rhyme",
-      "metadata": {
-        "title": "Nursery Rhyme",
-        "visual": {
-          "x": 250,
-          "y": 450,
-          "collapsed": "expanded",
-          "outputHeight": 88
-        }
-      },
-      "type": "embed://a2/a2.bgl.json#21ee02e7-83fa-49d0-964c-0cab10eafc2c",
-      "configuration": {
-        "description": {
-          "parts": [
-            {
-              "text": "Enter the nursery rhyme to be performed."
-            }
-          ],
-          "role": "user"
-        },
-        "p-modality": "Any"
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "ask_user_adventure_topic",
-      "to": "node_step_storyboard_text",
-      "out": "context",
-      "in": "p-z-ask_user_adventure_topic"
-    },
-    {
-      "from": "ask_user_nursery_rhyme",
-      "to": "node_step_storyboard_text",
-      "out": "context",
-      "in": "p-z-ask_user_nursery_rhyme"
-    },
-    {
-      "from": "node_step_storyboard_text",
-      "to": "node_step_storyboard_plan",
-      "out": "context",
-      "in": "p-z-node_step_storyboard_text"
-    }
-  ],
-  "url": "drive:/1HOAnqiT-mILki7ZSK8csl27jbcVFF_ro"
-}
+    </script>
+    <style>
+        .storyboard-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .storyboard-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); }
+        .phase-night { background-color: #1e293b; color: white; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#F8F7FF] text-slate-800 font-sans pb-12">
+
+    <!-- Hero Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-display text-slate-900">Dino-Night Adventure</h1>
+                <p class="text-slate-500 mt-1">Production Storyboard Dashboard</p>
+            </div>
+            <div class="flex items-center gap-4 mt-4 md:mt-0">
+                <div class="flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full border border-green-200">
+                    <div class="w-3 h-3 bg-pip rounded-full"></div>
+                    <span class="text-sm font-bold text-pip uppercase tracking-wider">Pip</span>
+                </div>
+                <div class="flex items-center gap-2 bg-orange-100 px-4 py-2 rounded-full border border-orange-200">
+                    <div class="w-3 h-3 bg-stella rounded-full"></div>
+                    <span class="text-sm font-bold text-stella uppercase tracking-wider">Stella</span>
+                </div>
+                <div class="flex items-center gap-2 bg-sky-100 px-4 py-2 rounded-full border border-sky-200">
+                    <div class="w-3 h-3 bg-toby rounded-full"></div>
+                    <span class="text-sm font-bold text-toby uppercase tracking-wider">Toby</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Timeline Ribbon -->
+    <nav class="max-w-7xl mx-auto px-4 my-8">
+        <div class="flex bg-white p-2 rounded-2xl shadow-sm border border-slate-200 overflow-x-auto scrollbar-hide">
+            <div class="flex-1 text-center py-3 border-r border-slate-100"><span class="block text-xs font-bold uppercase text-slate-400">Intro</span><span class="font-display">1-3</span></div>
+            <div class="flex-1 text-center py-3 border-r border-slate-100"><span class="block text-xs font-bold uppercase text-slate-400">Challenge</span><span class="font-display">4-6</span></div>
+            <div class="flex-1 text-center py-3 border-r border-slate-100 bg-slate-900 rounded-lg text-white"><span class="block text-xs font-bold uppercase text-slate-400">Nursery Rhyme</span><span class="font-display">7-10</span></div>
+            <div class="flex-1 text-center py-3"><span class="block text-xs font-bold uppercase text-slate-400">Conclusion</span><span class="font-display">11-12</span></div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Storyboard Grid -->
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Scene Generation Loop -->
+            <script>
+                const scenes = [
+                    {n: 1, time: "0:00-0:10", focus: "Pip, Stella, Toby", action: "Jungle clearing at twilight. Tent of giant ferns near campfire.", dialogue: "Toby: Our first camping trip!", color: "border-gray-300"},
+                    {n: 2, time: "0:10-0:20", focus: "Stella", action: "Close-up of Stella’s scales. Bioluminescent mushrooms pulse purple.", dialogue: "Stella: Look at the glowing mushrooms!", color: "border-stella"},
+                    {n: 3, time: "0:20-0:30", focus: "Pip", action: "Golden firefly zips past. Stella chases it.", dialogue: "Pip: A flying light!", color: "border-pip"},
+                    {n: 4, time: "0:30-0:40", focus: "Stella", action: "Deep in shadows of jagged ferns. Firefly gone.", dialogue: "Stella: Hello? Pip? Toby?", color: "border-stella"},
+                    {n: 5, time: "0:40-0:50", focus: "Pip, Toby", action: "Picking glowing berries to use as lantern.", dialogue: "Toby: We have the berries!", color: "border-toby"},
+                    {n: 6, time: "0:50-1:00", focus: "Trio", action: "Found Stella huddled behind rock. They hug.", dialogue: "Pip: Found you!", color: "border-gray-400"},
+                    {n: 7, time: "1:00-1:10", focus: "Pip", action: "Looking at starry sky. Rhythmically swaying.", dialogue: "Pip: Twinkle, twinkle...", color: "border-pip", night: true, teaser: true},
+                    {n: 8, time: "1:10-1:20", focus: "Toby", action: "Camera pans to diamond-like star.", dialogue: "Toby: Like a diamond in the sky.", color: "border-toby", night: true, teaser: true},
+                    {n: 9, time: "1:20-1:30", focus: "Trio", action: "Dancing in circle. Firefly returns.", dialogue: "All: How I wonder what you are!", color: "border-gray-400", night: true, teaser: true},
+                    {n: 10, time: "1:30-1:40", focus: "Stella", action: "Firefly lands on nose. She giggles.", dialogue: "Stella: You're never really far.", color: "border-stella", night: true},
+                    {n: 11, time: "1:40-1:50", focus: "Trio", action: "Tucked inside fern tent. Sleepy.", dialogue: "Pip: Goodnight, campers.", color: "border-gray-400"},
+                    {n: 12, time: "1:50-2:00", focus: "Campsite", action: "Wide shot of jungle under moonlight.", dialogue: "Narrator: Sweet dreams.", color: "border-gray-400"}
+                ];
+
+                scenes.forEach(s => {
+                    document.write(`
+                        <div class="storyboard-card bg-white p-6 rounded-3xl border-l-8 ${s.color} shadow-sm ${s.night ? 'phase-night' : ''}">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-4xl font-display opacity-50">#${s.n}</span>
+                                <span class="bg-black/10 px-3 py-1 rounded-full text-xs font-bold tracking-widest">${s.time}</span>
+                            </div>
+                            <h4 class="font-bold uppercase text-sm opacity-70 mb-2">Focus: ${s.focus}</h4>
+                            <p class="text-sm mb-4 leading-relaxed opacity-90">${s.action}</p>
+                            <div class="bg-black/5 p-4 rounded-xl italic font-serif">"${s.dialogue}"</div>
+                            ${s.teaser ? '<div class="mt-4 flex items-center gap-2 text-yellow-500 font-bold"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> Teaser Pick</div>' : ''}
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+
+        <!-- Vertical Teaser Spotlight -->
+        <div class="lg:col-span-1">
+            <div class="sticky top-28">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-6 text-white shadow-2xl border-4 border-white">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="bg-red-500 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Social Teaser</span>
+                    </div>
+                    <div class="aspect-[9/16] bg-black rounded-2xl mb-6 flex flex-col justify-end p-6 border border-slate-700 bg-opacity-30">
+                        <h3 class="font-display text-2xl leading-tight">Starry Night<br>Melody</h3>
+                        <p class="text-xs text-sky-300 mt-2">Scenes 7-9 / 30s Edit</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 h-12 bg-green-500 rounded-full"></div>
+                            <div>
+                                <p class="text-xs text-slate-400">0:00 - 0:10</p>
+                                <p class="font-bold text-sm">Pip's Twinkle Solo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 h-12 bg-sky-400 rounded-full"></div>
+                            <div>
+                                <p class="text-xs text-slate-400">0:10 - 0:20</p>
+                                <p class="font-bold text-sm">Toby & The Diamond</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 h-12 bg-orange-400 rounded-full"></div>
+                            <div>
+                                <p class="text-xs text-slate-400">0:20 - 0:30</p>
+                                <p class="font-bold text-sm">Friendship Circle Dance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
