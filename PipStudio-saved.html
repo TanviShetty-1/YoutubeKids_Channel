@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director's Storyboard Dashboard | Dino-Night Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pip: '#32CD32',
+                        stella: '#FF8C00',
+                        toby: '#89CFF0',
+                        night: '#1E293B'
+                    },
+                    fontFamily: {
+                        display: ['"Fredoka One"', 'cursive'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .storyboard-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .storyboard-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); }
+        .phase-night { background-color: #1e293b; color: white; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#F8F7FF] text-slate-800 font-sans pb-12">
+
+    <!-- Hero Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-display text-slate-900">Dino-Night Adventure</h1>
+                <p class="text-slate-500 mt-1">Production Storyboard Dashboard</p>
+            </div>
+            <div class="flex items-center gap-4 mt-4 md:mt-0">
+                <div class="flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full border border-green-200">
+                    <div class="w-3 h-3 bg-pip rounded-full"></div>
+                    <span class="text-sm font-bold text-pip uppercase tracking-wider">Pip</span>
+                </div>
+                <div class="flex items-center gap-2 bg-orange-100 px-4 py-2 rounded-full border border-orange-200">
+                    <div class="w-3 h-3 bg-stella rounded-full"></div>
+                    <span class="text-sm font-bold text-stella uppercase tracking-wider">Stella</span>
+                </div>
+                <div class="flex items-center gap-2 bg-sky-100 px-4 py-2 rounded-full border border-sky-200">
+                    <div class="w-3 h-3 bg-toby rounded-full"></div>
+                    <span class="text-sm font-bold text-toby uppercase tracking-wider">Toby</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Timeline Ribbon -->
+    <nav class="max-w-7xl mx-auto px-4 my-8">
+        <div class="flex bg-white p-2 rounded-2xl shadow-sm border border-slate-200 overflow-x-auto scrollbar-hide">
+            <div class="flex-1 text-center py-3 border-r border-slate-100"><span class="block text-xs font-bold uppercase text-slate-400">Intro</span><span class="font-display">1-3</span></div>
+            <div class="flex-1 text-center py-3 border-r border-slate-100"><span class="block text-xs font-bold uppercase text-slate-400">Challenge</span><span class="font-display">4-6</span></div>
+            <div class="flex-1 text-center py-3 border-r border-slate-100 bg-slate-900 rounded-lg text-white"><span class="block text-xs font-bold uppercase text-slate-400">Nursery Rhyme</span><span class="font-display">7-10</span></div>
+            <div class="flex-1 text-center py-3"><span class="block text-xs font-bold uppercase text-slate-400">Conclusion</span><span class="font-display">11-12</span></div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Storyboard Grid -->
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Scene Generation Loop -->
+            <script>
+                const scenes = [
+                    {n: 1, time: "0:00-0:10", focus: "Pip, Stella, Toby", action: "Jungle clearing at twilight. Tent of giant ferns near campfire.", dialogue: "Toby: Our first camping trip!", color: "border-gray-300"},
+                    {n: 2, time: "0:10-0:20", focus: "Stella", action: "Close-up of Stella’s scales. Bioluminescent mushrooms pulse purple.", dialogue: "Stella: Look at the glowing mushrooms!", color: "border-stella"},
+                    {n: 3, time: "0:20-0:30", focus: "Pip", action: "Golden firefly zips past. Stella chases it.", dialogue: "Pip: A flying light!", color: "border-pip"},
+                    {n: 4, time: "0:30-0:40", focus: "Stella", action: "Deep in shadows of jagged ferns. Firefly gone.", dialogue: "Stella: Hello? Pip? Toby?", color: "border-stella"},
+                    {n: 5, time: "0:40-0:50", focus: "Pip, Toby", action: "Picking glowing berries to use as lantern.", dialogue: "Toby: We have the berries!", color: "border-toby"},
+                    {n: 6, time: "0:50-1:00", focus: "Trio", action: "Found Stella huddled behind rock. They hug.", dialogue: "Pip: Found you!", color: "border-gray-400"},
+                    {n: 7, time: "1:00-1:10", focus: "Pip", action: "Looking at starry sky. Rhythmically swaying.", dialogue: "Pip: Twinkle, twinkle...", color: "border-pip", night: true, teaser: true},
+                    {n: 8, time: "1:10-1:20", focus: "Toby", action: "Camera pans to diamond-like star.", dialogue: "Toby: Like a diamond in the sky.", color: "border-toby", night: true, teaser: true},
+                    {n: 9, time: "1:20-1:30", focus: "Trio", action: "Dancing in circle. Firefly returns.", dialogue: "All: How I wonder what you are!", color: "border-gray-400", night: true, teaser: true},
+                    {n: 10, time: "1:30-1:40", focus: "Stella", action: "Firefly lands on nose. She giggles.", dialogue: "Stella: You're never really far.", color: "border-stella", night: true},
+                    {n: 11, time: "1:40-1:50", focus: "Trio", action: "Tucked inside fern tent. Sleepy.", dialogue: "Pip: Goodnight, campers.", color: "border-gray-400"},
+                    {n: 12, time: "1:50-2:00", focus: "Campsite", action: "Wide shot of jungle under moonlight.", dialogue: "Narrator: Sweet dreams.", color: "border-gray-400"}
+                ];
+
+                scenes.forEach(s => {
+                    document.write(`
+                        <div class="storyboard-card bg-white p-6 rounded-3xl border-l-8 ${s.color} shadow-sm ${s.night ? 'phase-night' : ''}">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-4xl font-display opacity-50">#${s.n}</span>
+                                <span class="bg-black/10 px-3 py-1 rounded-full text-xs font-bold tracking-widest">${s.time}</span>
+                            </div>
+                            <h4 class="font-bold uppercase text-sm opacity-70 mb-2">Focus: ${s.focus}</h4>
+                            <p class="text-sm mb-4 leading-relaxed opacity-90">${s.action}</p>
+                            <div class="bg-black/5 p-4 rounded-xl italic font-serif">"${s.dialogue}"</div>
+                            ${s.teaser ? '<div class="mt-4 flex items-center gap-2 text-yellow-500 font-bold"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> Teaser Pick</div>' : ''}
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+
+        <!-- Vertical Teaser Spotlight -->
+        <div class="lg:col-span-1">
+            <div class="sticky top-28">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-6 text-white shadow-2xl border-4 border-white">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="bg-red-500 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Social Teaser</span>
+                    </div>
+                    <div class="aspect-[9/16] bg-black rounded-2xl mb-6 flex flex-col justify-end p-6 border border-slate-700 bg-opacity-30">
+                        <h3 class="font-display text-2xl leading-tight">Starry Night<br>Melody</h3>
+                        <p class="text-xs text-sky-300 mt-2">Scenes 7-9 / 30s Edit</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 h-12 bg-green-500 rounded-full"></div>
+                            <div>
+                                <p class="text-xs text-slate-400">0:00 - 0:10</p>
+                                <p class="font-bold text-sm">Pip's Twinkle Solo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 h-12 bg-sky-400 rounded-full"></div>
+                            <div>
+                                <p class="text-xs text-slate-400">0:10 - 0:20</p>
+                                <p class="font-bold text-sm">Toby & The Diamond</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-2 h-12 bg-orange-400 rounded-full"></div>
+                            <div>
+                                <p class="text-xs text-slate-400">0:20 - 0:30</p>
+                                <p class="font-bold text-sm">Friendship Circle Dance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
